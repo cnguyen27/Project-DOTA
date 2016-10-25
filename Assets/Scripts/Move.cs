@@ -14,10 +14,10 @@ public class Move : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         int direction = 0; //0 = not moving, 1 = up, 2 = down, 3 = left, 4 = right
-        if(Input.GetKey(KeyCode.UpArrow) == true){ direction = 1;}
-        if (Input.GetKey(KeyCode.DownArrow) == true) { direction = 2; }
-        if (Input.GetKey(KeyCode.LeftArrow) == true) { direction = 3; }
-        if (Input.GetKey(KeyCode.RightArrow) == true) { direction = 4; }
+		if(Input.GetKey(KeyCode.UpArrow) == true || Input.GetKey(KeyCode.W) == true){ direction = 1;}
+		if (Input.GetKey(KeyCode.DownArrow) == true || Input.GetKey(KeyCode.S) == true) { direction = 2; }
+		if (Input.GetKey(KeyCode.LeftArrow) == true || Input.GetKey(KeyCode.A) == true) { direction = 3; }
+		if (Input.GetKey(KeyCode.RightArrow) == true || Input.GetKey(KeyCode.D) == true) { direction = 4; }
 
         switch (direction)
         {
