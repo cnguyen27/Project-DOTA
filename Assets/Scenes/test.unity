@@ -710,7 +710,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012870918990, guid: f29a7ea997311254da7888379b535631, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -31.9
+      value: -33.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000012870918990, guid: f29a7ea997311254da7888379b535631, type: 2}
       propertyPath: m_LocalPosition.z
@@ -746,7 +746,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012870918990, guid: f29a7ea997311254da7888379b535631, type: 2}
       propertyPath: m_LocalScale.x
+<<<<<<< HEAD
       value: 11.490991
+=======
+      value: 12
+>>>>>>> refs/remotes/FatalOz/master
       objectReference: {fileID: 0}
     - target: {fileID: 4000012870918990, guid: f29a7ea997311254da7888379b535631, type: 2}
       propertyPath: m_LocalScale.y
@@ -988,7 +992,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012870918990, guid: f29a7ea997311254da7888379b535631, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 9
+      value: 17.8
       objectReference: {fileID: 0}
     - target: {fileID: 4000012870918990, guid: f29a7ea997311254da7888379b535631, type: 2}
       propertyPath: m_LocalPosition.z
