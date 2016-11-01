@@ -6,6 +6,10 @@ public class Move : MonoBehaviour {
     private Animator c_anim;
     [SerializeField] private float speed = 100f;
     private bool facingRight = true;
+	private bool isMovingUp = false;
+	private bool isMovingDown = false;
+	private bool isMovingLeft = false;
+	private bool isMovingRight = false;
     // Use this for initialization
     void Start() {
         c_body = GetComponent<Rigidbody2D>();
@@ -14,26 +18,28 @@ public class Move : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         int direction = 0; //0 = not moving, 1 = up, 2 = down, 3 = left, 4 = right
-        if(Input.GetKey(KeyCode.UpArrow) == true){ direction = 1;}
-        if (Input.GetKey(KeyCode.DownArrow) == true) { direction = 2; }
-        if (Input.GetKey(KeyCode.LeftArrow) == true) { direction = 3; }
-        if (Input.GetKey(KeyCode.RightArrow) == true) { direction = 4; }
-
-        switch (direction)
-        {
-            case 1: c_body.AddForce(new Vector2(0f, speed));
-                break;
-            case 2:
-                c_body.AddForce(new Vector2(0f, -speed));
-                break;
-            case 3:
-                c_body.AddForce(new Vector2(-speed, 0f));
-                break;
-            case 4:
-                c_body.AddForce(new Vector2(speed, 0f));
-                break;
-        }
-        if (direction != 0)
+		if(Input.GetKey(KeyCode.UpArrow) == true || Input.GetKey(KeyCode.W) == true){
+			c_body.AddForce(new Vector2(0f, speed));
+			isMovingUp = true;
+		}
+		else {isMovingUp = false;}
+		if (Input.GetKey(KeyCode.DownArrow) == true || Input.GetKey(KeyCode.S) == true) { 
+			c_body.AddForce(new Vector2(0f, -speed));
+			isMovingDown = true;
+		}
+		else { isMovingDown = false; }
+		if (Input.GetKey(KeyCode.LeftArrow) == true || Input.GetKey(KeyCode.A) == true) { 
+			c_body.AddForce(new Vector2(-speed, 0f)); 
+			isMovingLeft = true;
+		}
+		else { isMovingLeft = false; }
+		if (Input.GetKey(KeyCode.RightArrow) == true || Input.GetKey(KeyCode.D) == true) { 
+			c_body.AddForce(new Vector2(speed, 0f));
+			isMovingRight = true;
+		}
+		else { isMovingRight = false; }
+        
+        if ( isMovingUp || isMovingDown || isMovingLeft || isMovingRight )
         {
             c_anim.SetBool("moving", true);
         }
