@@ -1,11 +1,16 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: bc165c433eb02da499c8f836e8cf52e0
 timeCreated: 1478035729
 =======
 guid: 08887738dea35c343ab67905a157ec59
 timeCreated: 1478021463
 >>>>>>> refs/remotes/FatalOz/combat
+=======
+guid: 08887738dea35c343ab67905a157ec59
+timeCreated: 1478021463
+>>>>>>> refs/remotes/FatalOz/Main-Menu
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -36,10 +41,14 @@ TextureImporter:
   textureSettings:
     filterMode: -1
 <<<<<<< HEAD
+<<<<<<< HEAD
     aniso: -1
 =======
     aniso: 16
 >>>>>>> refs/remotes/FatalOz/combat
+=======
+    aniso: -1
+>>>>>>> refs/remotes/FatalOz/Main-Menu
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
