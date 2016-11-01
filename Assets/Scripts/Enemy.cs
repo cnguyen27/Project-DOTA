@@ -4,11 +4,14 @@ using System.Collections;
 public class Enemy: MonoBehaviour {
 	
 	public int health;
-	public bool activate;
-	
-	void Update{
-		if (activate == true) {
-			
+	private bool activate;
+	void Start()
+    {
+    
+    }
+	void Update(){
+		if (health == 0) {
+            Destroy(gameObject);
 		}
 	}
 	

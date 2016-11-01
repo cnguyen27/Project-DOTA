@@ -5,31 +5,34 @@ public class Attack : MonoBehaviour
 {
     private Animator c_anim;
     private SpriteRenderer c_sprite;
+    private CircleCollider2D attackArea;
     // Use this for initialization
     void Start()
     {
         c_anim = GetComponent<Animator>();
         c_sprite = GetComponent<SpriteRenderer>();
+        attackArea = GetComponentInChildren<CircleCollider2D>();
     }
    
     // Update is called once per frame
     void Update()
     {
+        Vector2 directionRight = new Vector2(1, 0);
         if (Input.GetKeyUp(KeyCode.Space) == true)
         {
-            Vector3 c_position = transform.position;
-            Vector3 add1 = new Vector3(0, 1);
-            print("hit");
+            RaycastHit2D[] results = new RaycastHit2D[3];
+
+            attackArea.Cast(directionRight, results, 0, false);
             c_anim.SetBool("attacking", true);
-            Collider[] hitEnemies = Physics.OverlapSphere(c_position += add1, 1);
-            foreach (Collider enemy in hitEnemies)
+            foreach(RaycastHit2D enemy in results)
             {
-                
-                GameObject hitEnemy = enemy.gameObject;
-                // hitEnemy.health -= 1; 
-                c_sprite.color = Color.red;
+                print("HIT");
+                Enemy hitEnemy = enemy.collider.GetComponent<Enemy>();
+                SpriteRenderer e_sprite = enemy.collider.GetComponent<SpriteRenderer>();
+                hitEnemy.health -= 1;
+                e_sprite.color = Color.red;
                 WaitForSecondsRealtime wait = new WaitForSecondsRealtime(0.1f);
-                c_sprite.color = Color.white;
+                e_sprite.color = Color.white;
             }
         }
         else c_anim.SetBool("attacking", false);
