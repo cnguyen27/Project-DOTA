@@ -5,11 +5,11 @@ public class Enemy: MonoBehaviour {
 	
 	public int health;
 	public bool activate;
-	
+	/*
 	void Update{
 		if (activate == true) {
 			
 		}
 	}
-	
+	*/
 }
