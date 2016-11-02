@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Move : MonoBehaviour {
     private Rigidbody2D c_body;
@@ -17,6 +18,11 @@ public class Move : MonoBehaviour {
     }
     // Update is called once per frame
     void Update() {
+        //If ESC is pressed go to main menu
+        if (Input.GetKey(KeyCode.Escape) == true)
+        {
+            SceneManager.LoadScene("Menu");
+        }
         int direction = 0; //0 = not moving, 1 = up, 2 = down, 3 = left, 4 = right
 		if(Input.GetKey(KeyCode.UpArrow) == true || Input.GetKey(KeyCode.W) == true){
 			c_body.AddForce(new Vector2(0f, speed));
